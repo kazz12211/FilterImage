@@ -62,6 +62,23 @@ class Filters: NSObject {
             filterName: "CIColorPosterize",
             categoryName: "CICategoryColorEffect",
             inputParams: [FilterParam(name: "inputLevels", type: .number, value: 6.0)]))
+        
+        add(Filter(
+            filterName: "CIColorClamp",
+            categoryName:
+            "CICategoryColorAdjustment",
+            inputParams: [
+                FilterParam(name: "inputMinComponents", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 0, height: 0))),
+                FilterParam(name: "inputMaxComponents", type: .vector, value: CIVector(cgRect: CGRect(x: 1, y: 1, width: 1, height: 1)))
+            ]))
+        add(Filter(
+            filterName: "CIColorControls",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [
+                FilterParam(name: "inputSaturation", type: .number, value: 1.0),
+                FilterParam(name: "inputBrightness", type: .number, value: 1.0),
+                FilterParam(name: "inputContrast", type: .number, value: 1.0)
+            ]))
     }
     
     func add(_ filter: Filter) {

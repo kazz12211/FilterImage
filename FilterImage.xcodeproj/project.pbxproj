@@ -32,6 +32,8 @@
 		F866F4C7212AF22000DFA4B4 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F866F4C6212AF22000DFA4B4 /* Photos.framework */; };
 		F866F4CC212AF43400DFA4B4 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866F4CB212AF43400DFA4B4 /* ImageFilter.swift */; };
 		F866F4CE212AFB7F00DFA4B4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F866F4CD212AFB7F00DFA4B4 /* CoreImage.framework */; };
+		F8C5E7E121310CB0005D4DAA /* CIColorClampParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C5E7E021310CB0005D4DAA /* CIColorClampParamView.swift */; };
+		F8C5E7E321311E31005D4DAA /* CIColorControlsParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C5E7E221311E31005D4DAA /* CIColorControlsParamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		F866F4C6212AF22000DFA4B4 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F866F4CB212AF43400DFA4B4 /* ImageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
 		F866F4CD212AFB7F00DFA4B4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F8C5E7E021310CB0005D4DAA /* CIColorClampParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorClampParamView.swift; sourceTree = "<group>"; };
+		F8C5E7E221311E31005D4DAA /* CIColorControlsParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorControlsParamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				F844D726212FA6B4009BB280 /* CIMedianFilterParamView.swift */,
 				F844D728212FA910009BB280 /* CIMotionBlurParamView.swift */,
 				F844D72A212FACA1009BB280 /* CIZoomBlurParamView.swift */,
+				F8C5E7E021310CB0005D4DAA /* CIColorClampParamView.swift */,
+				F8C5E7E221311E31005D4DAA /* CIColorControlsParamView.swift */,
 			);
 			path = ParamViews;
 			sourceTree = "<group>";
@@ -225,12 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C5E7E321311E31005D4DAA /* CIColorControlsParamView.swift in Sources */,
 				F844D723212FA56A009BB280 /* CIDiscBlurParamView.swift in Sources */,
 				F84473A6212CE09900F8BE97 /* ColorPickerWheelView.swift in Sources */,
 				F866F4CC212AF43400DFA4B4 /* ImageFilter.swift in Sources */,
 				F84473A3212CDCB800F8BE97 /* CIColorPosterizeParamView.swift in Sources */,
 				F844D727212FA6B4009BB280 /* CIMedianFilterParamView.swift in Sources */,
 				F848AF89212BA177007F158C /* Filter.swift in Sources */,
+				F8C5E7E121310CB0005D4DAA /* CIColorClampParamView.swift in Sources */,
 				F84473A0212CDA4100F8BE97 /* FilterParamView.swift in Sources */,
 				F848AF8B212BA420007F158C /* FilterParam.swift in Sources */,
 				F848AF8D212BC16F007F158C /* Filters.swift in Sources */,

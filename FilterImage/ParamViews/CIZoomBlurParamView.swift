@@ -48,7 +48,7 @@ class CIZoomBlurParamView: FilterParamView {
         )
         inputCenterXField = UITextField(frame: rect)
         inputCenterXField.textAlignment = .center
-        inputCenterXField.keyboardType = .numberPad
+        inputCenterXField.keyboardType = .decimalPad
         inputCenterXField.backgroundColor = .white
         addSubview(inputCenterXField)
         
@@ -60,7 +60,7 @@ class CIZoomBlurParamView: FilterParamView {
         )
         inputCenterYField = UITextField(frame: rect)
         inputCenterYField.textAlignment = .center
-        inputCenterYField.keyboardType = .numberPad
+        inputCenterYField.keyboardType = .decimalPad
         inputCenterYField.backgroundColor = .white
         addSubview(inputCenterYField)
         

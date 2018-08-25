@@ -48,6 +48,8 @@ class FilterController: UIViewController {
         filterParamViewDict["CIMedianFilter"] = CIMedianFilterParamView(frame: CGRect.zero)
         filterParamViewDict["CIMotionBlur"] = CIMotionBlurParamView(frame: CGRect.zero)
         filterParamViewDict["CIZoomBlur"] = CIZoomBlurParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorClamp"] = CIColorClampParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorControls"] = CIColorControlsParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,6 +63,8 @@ class FilterController: UIViewController {
         filterParamViewDict["CIMedianFilter"] = CIMedianFilterParamView(frame: CGRect.zero)
         filterParamViewDict["CIMotionBlur"] = CIMotionBlurParamView(frame: CGRect.zero)
         filterParamViewDict["CIZoomBlur"] = CIZoomBlurParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorClamp"] = CIColorClampParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorControls"] = CIColorControlsParamView(frame: CGRect.zero)
     }
     
     override func viewDidLoad() {
