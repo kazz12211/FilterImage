@@ -97,12 +97,12 @@ class ColorPickerWheelView : UIView {
     }
     
     @objc func wheelTapped(_ gesture: UITapGestureRecognizer) {
-        let location = gesture.location(ofTouch: 0, in: colorPickerImageView)
+        let location = gesture.location(ofTouch: 0, in: colorPickerImageView.superview)
         selectColorAt(point: location)
     }
     
     @objc func wheelPanned(_ gesture: UIPanGestureRecognizer) {
-        let location = gesture.location(in: colorPickerImageView)
+        let location = gesture.location(in: colorPickerImageView.superview)
         var r = colorPickerImageView.frame
         r.origin = CGPoint.zero
         if r.contains(location) {
@@ -112,7 +112,7 @@ class ColorPickerWheelView : UIView {
     
     private func selectColorAt(point: CGPoint) {
         if colorPickerImageView.frame.contains(point) {
-            if let color = pixelColorAt(point) {
+            if let color = calculateColor(point: point) {
                 let alpha = opacitySlider.value / 100.0
                 currentColor = color
                 colorView.backgroundColor = currentColor.withAlphaComponent(CGFloat(alpha))
@@ -129,45 +129,28 @@ class ColorPickerWheelView : UIView {
         colorView.backgroundColor = currentColor.withAlphaComponent(CGFloat(alpha) / 100.0)
     }
     
-    private func pixelColorAt(_ location: CGPoint) -> UIColor? {
-        var color: UIColor? = nil
+    private func calculateColor(point: CGPoint) -> UIColor? {
         
-        guard let inImage = colorPickerImageView.image?.cgImage else { return color }
+        let center = colorPickerImageView.center
+        let radius = colorPickerImageView.frame.width/2
         
-        let pixelWidth = inImage.width
-        let pixelHeight = inImage.height
-        let bitmapBytesPerRow = pixelWidth * 4
-        let bitmapByteCount = bitmapBytesPerRow * pixelHeight
+        let x = point.x - center.x
+        let y = -(point.y - center.y)
         
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        
-        let bitmapData = calloc(bitmapByteCount, MemoryLayout<UInt8>.size)
-        
-        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
-        guard let context = CGContext(data: bitmapData, width: pixelWidth, height: pixelHeight, bitsPerComponent: 8, bytesPerRow: bitmapBytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else {
-            free(bitmapData)
-            return color
+        var radian = atan2f(Float(y), Float(x))
+        if radian < 0 {
+            
+            radian += Float(Double.pi*2)
         }
         
-        let rect = CGRect(x: 0, y: 0, width: pixelWidth, height: pixelHeight)
-        
-        context.draw(inImage, in: rect)
-        
-        guard let data = context.data else {
-            free(bitmapData)
-            return color
-        }
-        
-        let offset = 4 * (pixelWidth * Int(round(location.y))) + 4 * Int(round(location.x))
-        let red = data.load(fromByteOffset: offset, as: UInt8.self)
-        let green = data.load(fromByteOffset: offset+1, as: UInt8.self)
-        let blue = data.load(fromByteOffset: offset+2, as: UInt8.self)
-        let alpha = data.load(fromByteOffset: offset+3, as: UInt8.self)
-        print("location: \(location) offset: \(offset) colors (RGBA): \(red) \(green) \(blue) \(alpha)")
-        color = UIColor(red: CGFloat(Float(red)/255.0), green: CGFloat(Float(green)/255.0), blue: CGFloat(Float(blue)/255.0), alpha: CGFloat(Float(alpha)/255.0))
-        
-        free(bitmapData)
-        
-        return color
+        let distance = CGFloat(sqrtf(Float(pow(Double(x), 2) + pow(Double(y), 2))))
+        let saturation = (distance > radius) ? 1.0 : distance/radius
+        let alpha = CGFloat(opacitySlider.value)/100.0;
+        let hue = CGFloat(radian/Float(Double.pi*2))
+        return UIColor(hue: hue,
+                       saturation: saturation,
+                       brightness: 1,
+                       alpha: alpha)
     }
+    
 }
