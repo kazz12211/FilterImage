@@ -77,8 +77,8 @@ class CIMotionBlurParamView: FilterParamView {
             height: 29
         )
         inputAngleSlider = UISlider(frame: rect)
-        inputAngleSlider.minimumValue = -3.14
-        inputAngleSlider.maximumValue = 3.14
+        inputAngleSlider.minimumValue = -Float.pi
+        inputAngleSlider.maximumValue = Float.pi
         if let param = filter.inputParam(name: "inputAngle") {
             let value = param.value as! NSNumber
             angle = Float(truncating: value)

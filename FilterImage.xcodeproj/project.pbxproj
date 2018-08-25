@@ -10,6 +10,12 @@
 		F8391465212D776A0010C963 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8391464212D776A0010C963 /* CoreGraphics.framework */; };
 		F8391467212D7B410010C963 /* CIColorMonochromeParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8391466212D7B410010C963 /* CIColorMonochromeParamView.swift */; };
 		F83CE591212C38D00035F310 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CE590212C38D00035F310 /* FilterController.swift */; };
+		F8431BFD213177A9002735EA /* CIExposureAdjustParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431BFC213177A9002735EA /* CIExposureAdjustParamView.swift */; };
+		F8431BFF21317B3B002735EA /* CIGammaAdjustParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431BFE21317B3B002735EA /* CIGammaAdjustParamView.swift */; };
+		F8431C0121317CFF002735EA /* CIHueAdjustParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431C0021317CFF002735EA /* CIHueAdjustParamView.swift */; };
+		F8431C0321317EFB002735EA /* CILinearToSRGBToneCurveParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431C0221317EFB002735EA /* CILinearToSRGBToneCurveParamView.swift */; };
+		F8431C0521317F8F002735EA /* CISRGBToneCurveToLinearParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431C0421317F8F002735EA /* CISRGBToneCurveToLinearParamView.swift */; };
+		F8431C0721318044002735EA /* CITemperatureAndTintParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431C0621318044002735EA /* CITemperatureAndTintParamView.swift */; };
 		F84473A0212CDA4100F8BE97 /* FilterParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F844739F212CDA4100F8BE97 /* FilterParamView.swift */; };
 		F84473A3212CDCB800F8BE97 /* CIColorPosterizeParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84473A2212CDCB800F8BE97 /* CIColorPosterizeParamView.swift */; };
 		F84473A6212CE09900F8BE97 /* ColorPickerWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84473A5212CE09900F8BE97 /* ColorPickerWheelView.swift */; };
@@ -40,6 +46,12 @@
 		F8391464212D776A0010C963 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F8391466212D7B410010C963 /* CIColorMonochromeParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorMonochromeParamView.swift; sourceTree = "<group>"; };
 		F83CE590212C38D00035F310 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		F8431BFC213177A9002735EA /* CIExposureAdjustParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIExposureAdjustParamView.swift; sourceTree = "<group>"; };
+		F8431BFE21317B3B002735EA /* CIGammaAdjustParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIGammaAdjustParamView.swift; sourceTree = "<group>"; };
+		F8431C0021317CFF002735EA /* CIHueAdjustParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIHueAdjustParamView.swift; sourceTree = "<group>"; };
+		F8431C0221317EFB002735EA /* CILinearToSRGBToneCurveParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILinearToSRGBToneCurveParamView.swift; sourceTree = "<group>"; };
+		F8431C0421317F8F002735EA /* CISRGBToneCurveToLinearParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISRGBToneCurveToLinearParamView.swift; sourceTree = "<group>"; };
+		F8431C0621318044002735EA /* CITemperatureAndTintParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITemperatureAndTintParamView.swift; sourceTree = "<group>"; };
 		F844739F212CDA4100F8BE97 /* FilterParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterParamView.swift; sourceTree = "<group>"; };
 		F84473A2212CDCB800F8BE97 /* CIColorPosterizeParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorPosterizeParamView.swift; sourceTree = "<group>"; };
 		F84473A5212CE09900F8BE97 /* ColorPickerWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerWheelView.swift; sourceTree = "<group>"; };
@@ -97,6 +109,12 @@
 				F844D72A212FACA1009BB280 /* CIZoomBlurParamView.swift */,
 				F8C5E7E021310CB0005D4DAA /* CIColorClampParamView.swift */,
 				F8C5E7E221311E31005D4DAA /* CIColorControlsParamView.swift */,
+				F8431BFC213177A9002735EA /* CIExposureAdjustParamView.swift */,
+				F8431BFE21317B3B002735EA /* CIGammaAdjustParamView.swift */,
+				F8431C0021317CFF002735EA /* CIHueAdjustParamView.swift */,
+				F8431C0221317EFB002735EA /* CILinearToSRGBToneCurveParamView.swift */,
+				F8431C0421317F8F002735EA /* CISRGBToneCurveToLinearParamView.swift */,
+				F8431C0621318044002735EA /* CITemperatureAndTintParamView.swift */,
 			);
 			path = ParamViews;
 			sourceTree = "<group>";
@@ -231,9 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8431C0321317EFB002735EA /* CILinearToSRGBToneCurveParamView.swift in Sources */,
+				F8431C0121317CFF002735EA /* CIHueAdjustParamView.swift in Sources */,
 				F8C5E7E321311E31005D4DAA /* CIColorControlsParamView.swift in Sources */,
+				F8431C0521317F8F002735EA /* CISRGBToneCurveToLinearParamView.swift in Sources */,
 				F844D723212FA56A009BB280 /* CIDiscBlurParamView.swift in Sources */,
 				F84473A6212CE09900F8BE97 /* ColorPickerWheelView.swift in Sources */,
+				F8431C0721318044002735EA /* CITemperatureAndTintParamView.swift in Sources */,
 				F866F4CC212AF43400DFA4B4 /* ImageFilter.swift in Sources */,
 				F84473A3212CDCB800F8BE97 /* CIColorPosterizeParamView.swift in Sources */,
 				F844D727212FA6B4009BB280 /* CIMedianFilterParamView.swift in Sources */,
@@ -250,6 +272,8 @@
 				F844D725212FA60B009BB280 /* CIGaussianBlurParamView.swift in Sources */,
 				F844D721212FA1C5009BB280 /* CIBoxBlurParamView.swift in Sources */,
 				F866F4B4212AF15E00DFA4B4 /* AppDelegate.swift in Sources */,
+				F8431BFF21317B3B002735EA /* CIGammaAdjustParamView.swift in Sources */,
+				F8431BFD213177A9002735EA /* CIExposureAdjustParamView.swift in Sources */,
 				F83CE591212C38D00035F310 /* FilterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

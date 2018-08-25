@@ -62,11 +62,9 @@ class Filters: NSObject {
             filterName: "CIColorPosterize",
             categoryName: "CICategoryColorEffect",
             inputParams: [FilterParam(name: "inputLevels", type: .number, value: 6.0)]))
-        
         add(Filter(
             filterName: "CIColorClamp",
-            categoryName:
-            "CICategoryColorAdjustment",
+            categoryName: "CICategoryColorAdjustment",
             inputParams: [
                 FilterParam(name: "inputMinComponents", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 0, height: 0))),
                 FilterParam(name: "inputMaxComponents", type: .vector, value: CIVector(cgRect: CGRect(x: 1, y: 1, width: 1, height: 1)))
@@ -78,6 +76,33 @@ class Filters: NSObject {
                 FilterParam(name: "inputSaturation", type: .number, value: 1.0),
                 FilterParam(name: "inputBrightness", type: .number, value: 1.0),
                 FilterParam(name: "inputContrast", type: .number, value: 1.0)
+            ]))
+        add(Filter(
+            filterName: "CIExposureAdjust",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [FilterParam(name: "inputEV", type: .number, value: 0.5)]))
+        add(Filter(
+            filterName: "CIGammaAdjust",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [FilterParam(name: "inputPower", type: .number, value: 0.5)]))
+        add(Filter(
+            filterName: "CIHueAdjust",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [FilterParam(name: "inputAngle", type: .number, value: 0.0)]))
+        add(Filter(
+            filterName: "CILinearToSRGBToneCurve",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: []))
+        add(Filter(
+            filterName: "CISRGBToneCurveToLinear",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: []))
+        add(Filter(
+            filterName: "CITemperatureAndTint",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [
+                FilterParam(name: "inputNeutral", type: .vector, value: CIVector(cgPoint: CGPoint(x: 6500, y: 0))),
+                FilterParam(name: "inputTargetNeutral", type: .vector, value: CIVector(cgPoint: CGPoint(x: 6500, y: 0)))
             ]))
     }
     

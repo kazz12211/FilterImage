@@ -50,6 +50,12 @@ class FilterController: UIViewController {
         filterParamViewDict["CIZoomBlur"] = CIZoomBlurParamView(frame: CGRect.zero)
         filterParamViewDict["CIColorClamp"] = CIColorClampParamView(frame: CGRect.zero)
         filterParamViewDict["CIColorControls"] = CIColorControlsParamView(frame: CGRect.zero)
+        filterParamViewDict["CIExposureAdjust"] = CIExposureAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CIGammaAdjust"] = CIGammaAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHueAdjust"] = CIHueAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CILinearToSRGBToneCurve"] = CILinearToSRGBToneCurveParamView(frame: CGRect.zero)
+        filterParamViewDict["CISRGBToneCurveToLinear"] = CISRGBToneCurveToLinearParamView(frame: CGRect.zero)
+        filterParamViewDict["CITemperatureAndTint"] = CITemperatureAndTintParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,6 +71,12 @@ class FilterController: UIViewController {
         filterParamViewDict["CIZoomBlur"] = CIZoomBlurParamView(frame: CGRect.zero)
         filterParamViewDict["CIColorClamp"] = CIColorClampParamView(frame: CGRect.zero)
         filterParamViewDict["CIColorControls"] = CIColorControlsParamView(frame: CGRect.zero)
+        filterParamViewDict["CIExposureAdjust"] = CIExposureAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CIGammaAdjust"] = CIGammaAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHueAdjust"] = CIHueAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CILinearToSRGBToneCurve"] = CILinearToSRGBToneCurveParamView(frame: CGRect.zero)
+        filterParamViewDict["CISRGBToneCurveToLinear"] = CISRGBToneCurveToLinearParamView(frame: CGRect.zero)
+        filterParamViewDict["CITemperatureAndTint"] = CITemperatureAndTintParamView(frame: CGRect.zero)
     }
     
     override func viewDidLoad() {
