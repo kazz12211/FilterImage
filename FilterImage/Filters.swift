@@ -112,7 +112,11 @@ class Filters: NSObject {
             filterName: "CIWhitePointAdjust",
             categoryName: "CICategoryColorAdjustment",
             inputParams: [FilterParam(name: "inputColor", type: .color, value: CIColor(color: UIColor(red: 1, green: 1, blue: 1, alpha: 1)))]))
-    }
+        add(Filter(
+            filterName: "CIColorInvert",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+   }
     
     func add(_ filter: Filter) {
         filters.append(filter)
