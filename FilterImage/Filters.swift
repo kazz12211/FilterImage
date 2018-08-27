@@ -122,6 +122,10 @@ class Filters: NSObject {
             inputParams: [
                 FilterParam(name: "inputColor0", type: .color, value: CIColor(color: UIColor(red: 0.4, green: 0, blue: 0, alpha: 1))),
                 FilterParam(name: "inputColor1", type: .color, value: CIColor(color: UIColor(red: 1, green: 0.9, blue: 0.8, alpha: 1)))]))
+        add(Filter(
+            filterName: "CIMaskToAlpha",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
    }
     
     func add(_ filter: Filter) {

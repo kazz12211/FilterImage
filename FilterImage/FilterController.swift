@@ -60,6 +60,7 @@ class FilterController: UIViewController {
         filterParamViewDict["CIWhitePointAdjust"] = CIWhitePointAdjustParamView(frame: CGRect.zero)
         filterParamViewDict["CIColorInvert"] = CIColorInvertParamView(frame: CGRect.zero)
         filterParamViewDict["CIFalseColor"] = CIFalseColorParamView(frame: CGRect.zero)
+        filterParamViewDict["CIMaskToAlpha"] = CIMaskToAlphaParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -85,6 +86,7 @@ class FilterController: UIViewController {
         filterParamViewDict["CIWhitePointAdjust"] = CIWhitePointAdjustParamView(frame: CGRect.zero)
         filterParamViewDict["CIColorInvert"] = CIColorInvertParamView(frame: CGRect.zero)
         filterParamViewDict["CIFalseColor"] = CIFalseColorParamView(frame: CGRect.zero)
+        filterParamViewDict["CIMaskToAlpha"] = CIMaskToAlphaParamView(frame: CGRect.zero)
     }
     
     override func viewDidLoad() {
