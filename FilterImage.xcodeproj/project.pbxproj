@@ -16,6 +16,7 @@
 		F83C0DDF21338CEC002BC6DD /* CIWhitePointAdjustParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DDE21338CEC002BC6DD /* CIWhitePointAdjustParamView.swift */; };
 		F83C0DE121338F3A002BC6DD /* CIColorCrossPolynomialParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DE021338F3A002BC6DD /* CIColorCrossPolynomialParamView.swift */; };
 		F83C0DE321338FBB002BC6DD /* CIColorCubeParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DE221338FBB002BC6DD /* CIColorCubeParamView.swift */; };
+		F83C0DE521339020002BC6DD /* CIColorCubeWithColorSpaceParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DE421339020002BC6DD /* CIColorCubeWithColorSpaceParamView.swift */; };
 		F83CE591212C38D00035F310 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CE590212C38D00035F310 /* FilterController.swift */; };
 		F8431BFD213177A9002735EA /* CIExposureAdjustParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431BFC213177A9002735EA /* CIExposureAdjustParamView.swift */; };
 		F8431BFF21317B3B002735EA /* CIGammaAdjustParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8431BFE21317B3B002735EA /* CIGammaAdjustParamView.swift */; };
@@ -59,6 +60,7 @@
 		F83C0DDE21338CEC002BC6DD /* CIWhitePointAdjustParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIWhitePointAdjustParamView.swift; sourceTree = "<group>"; };
 		F83C0DE021338F3A002BC6DD /* CIColorCrossPolynomialParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorCrossPolynomialParamView.swift; sourceTree = "<group>"; };
 		F83C0DE221338FBB002BC6DD /* CIColorCubeParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorCubeParamView.swift; sourceTree = "<group>"; };
+		F83C0DE421339020002BC6DD /* CIColorCubeWithColorSpaceParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorCubeWithColorSpaceParamView.swift; sourceTree = "<group>"; };
 		F83CE590212C38D00035F310 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		F8431BFC213177A9002735EA /* CIExposureAdjustParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIExposureAdjustParamView.swift; sourceTree = "<group>"; };
 		F8431BFE21317B3B002735EA /* CIGammaAdjustParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIGammaAdjustParamView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				F83C0DDE21338CEC002BC6DD /* CIWhitePointAdjustParamView.swift */,
 				F83C0DE021338F3A002BC6DD /* CIColorCrossPolynomialParamView.swift */,
 				F83C0DE221338FBB002BC6DD /* CIColorCubeParamView.swift */,
+				F83C0DE421339020002BC6DD /* CIColorCubeWithColorSpaceParamView.swift */,
 			);
 			path = ParamViews;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				F8C5E7E121310CB0005D4DAA /* CIColorClampParamView.swift in Sources */,
 				F84473A0212CDA4100F8BE97 /* FilterParamView.swift in Sources */,
 				F83C0DDB21338AFD002BC6DD /* CIToneCurveParamView.swift in Sources */,
+				F83C0DE521339020002BC6DD /* CIColorCubeWithColorSpaceParamView.swift in Sources */,
 				F848AF8B212BA420007F158C /* FilterParam.swift in Sources */,
 				F848AF8D212BC16F007F158C /* Filters.swift in Sources */,
 				F83C0DD921338ABE002BC6DD /* CIColorPolynomialParamView.swift in Sources */,
