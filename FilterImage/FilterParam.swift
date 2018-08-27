@@ -14,7 +14,7 @@ enum ParamType: Int {
     case vector = 2
     case color = 3
     case image = 4
-    
+    case data = 5
 }
 
 class FilterParam: NSObject {
