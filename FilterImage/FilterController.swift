@@ -56,6 +56,8 @@ class FilterController: UIViewController {
         filterParamViewDict["CILinearToSRGBToneCurve"] = CILinearToSRGBToneCurveParamView(frame: CGRect.zero)
         filterParamViewDict["CISRGBToneCurveToLinear"] = CISRGBToneCurveToLinearParamView(frame: CGRect.zero)
         filterParamViewDict["CITemperatureAndTint"] = CITemperatureAndTintParamView(frame: CGRect.zero)
+        filterParamViewDict["CIVibrance"] = CIVibranceParamView(frame: CGRect.zero)
+        filterParamViewDict["CIWhitePointAdjust"] = CIWhitePointAdjustParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -77,6 +79,8 @@ class FilterController: UIViewController {
         filterParamViewDict["CILinearToSRGBToneCurve"] = CILinearToSRGBToneCurveParamView(frame: CGRect.zero)
         filterParamViewDict["CISRGBToneCurveToLinear"] = CISRGBToneCurveToLinearParamView(frame: CGRect.zero)
         filterParamViewDict["CITemperatureAndTint"] = CITemperatureAndTintParamView(frame: CGRect.zero)
+        filterParamViewDict["CIVibrance"] = CIVibranceParamView(frame: CGRect.zero)
+        filterParamViewDict["CIWhitePointAdjust"] = CIWhitePointAdjustParamView(frame: CGRect.zero)
     }
     
     override func viewDidLoad() {

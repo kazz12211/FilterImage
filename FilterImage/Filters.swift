@@ -104,6 +104,14 @@ class Filters: NSObject {
                 FilterParam(name: "inputNeutral", type: .vector, value: CIVector(cgPoint: CGPoint(x: 6500, y: 0))),
                 FilterParam(name: "inputTargetNeutral", type: .vector, value: CIVector(cgPoint: CGPoint(x: 6500, y: 0)))
             ]))
+        add(Filter(
+            filterName: "CIVibrance",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [FilterParam(name: "inputAmount", type: .number, value: 0.0)]))
+        add(Filter(
+            filterName: "CIWhitePointAdjust",
+            categoryName: "CICategoryColorAdjustment",
+            inputParams: [FilterParam(name: "inputColor", type: .color, value: CIColor(color: UIColor(red: 1, green: 1, blue: 1, alpha: 1)))]))
     }
     
     func add(_ filter: Filter) {

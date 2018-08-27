@@ -36,7 +36,7 @@ class CIColorMonochromeParamView : FilterParamView {
         inputColorLabel.text = "Color"
         self.addSubview(inputColorLabel)
         
-        rect = CGRect(x:0, y: 20, width: self.frame.width, height: self.frame.height - 80)
+        rect = CGRect(x:0, y: inputColorLabel.frame.origin.y + inputColorLabel.frame.height, width: self.frame.width, height: self.frame.height - 80)
         colorPickerWheelView = ColorPickerWheelView(frame: rect)
         self.addSubview(colorPickerWheelView)
         colorPickerWheelView.delegate = self
