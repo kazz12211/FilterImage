@@ -61,6 +61,18 @@ class FilterController: UIViewController {
         filterParamViewDict["CIColorInvert"] = CIColorInvertParamView(frame: CGRect.zero)
         filterParamViewDict["CIFalseColor"] = CIFalseColorParamView(frame: CGRect.zero)
         filterParamViewDict["CIMaskToAlpha"] = CIMaskToAlphaParamView(frame: CGRect.zero)
+        filterParamViewDict["CIMinimumComponent"] = CIMinimumComponentParamView(frame: CGRect.zero)
+        filterParamViewDict["CIMaximumComponent"] = CIMaximumComponentParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectChrome"] = CIPhotoEffectChromeParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectFade"] = CIPhotoEffectFadeParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectInstant"] = CIPhotoEffectInstantParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectMono"] = CIPhotoEffectMonoParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectNoir"] = CIPhotoEffectNoirParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectProcess"] = CIPhotoEffectProcessParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectTonal"] = CIPhotoEffectTonalParamView(frame: CGRect.zero)
+        filterParamViewDict["CISepiaTone"] = CISepiaToneParamView(frame: CGRect.zero)
+        filterParamViewDict["CIVignette"] = CIVignetteParamView(frame: CGRect.zero)
+        filterParamViewDict["CIVignetteEffect"] = CIVignetteEffectParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,7 +99,20 @@ class FilterController: UIViewController {
         filterParamViewDict["CIColorInvert"] = CIColorInvertParamView(frame: CGRect.zero)
         filterParamViewDict["CIFalseColor"] = CIFalseColorParamView(frame: CGRect.zero)
         filterParamViewDict["CIMaskToAlpha"] = CIMaskToAlphaParamView(frame: CGRect.zero)
-    }
+        filterParamViewDict["CIMinimumComponent"] = CIMinimumComponentParamView(frame: CGRect.zero)
+        filterParamViewDict["CIMaximumComponent"] = CIMaximumComponentParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectChrome"] = CIPhotoEffectChromeParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectFade"] = CIPhotoEffectFadeParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectInstant"] = CIPhotoEffectInstantParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectMono"] = CIPhotoEffectMonoParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectNoir"] = CIPhotoEffectNoirParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectProcess"] = CIPhotoEffectProcessParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectTonal"] = CIPhotoEffectTonalParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPhotoEffectTransfer"] = CIPhotoEffectTransferParamView(frame: CGRect.zero)
+        filterParamViewDict["CISepiaTone"] = CISepiaToneParamView(frame: CGRect.zero)
+        filterParamViewDict["CIVignette"] = CIVignetteParamView(frame: CGRect.zero)
+        filterParamViewDict["CIVignetteEffect"] = CIVignetteEffectParamView(frame: CGRect.zero)
+   }
     
     override func viewDidLoad() {
         super.viewDidLoad()

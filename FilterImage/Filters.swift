@@ -126,6 +126,63 @@ class Filters: NSObject {
             filterName: "CIMaskToAlpha",
             categoryName: "CICategoryColorEffect",
             inputParams: []))
+        add(Filter(
+            filterName: "CIMinimumComponent",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIMaximumComponent",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectChrome",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectFade",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectInstant",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectMono",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectNoir",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectProcess",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectTonal",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CIPhotoEffectTransfer",
+            categoryName: "CICategoryColorEffect",
+            inputParams: []))
+        add(Filter(
+            filterName: "CISepiaTone",
+            categoryName: "CICategoryColorEffect",
+            inputParams: [FilterParam(name: "inputIntensity", type: .number, value: 1.0)]))
+        add(Filter(
+            filterName: "CIVignette",
+            categoryName: "CICategoryColorEffect",
+            inputParams: [
+                FilterParam(name: "inputRadius", type: .number, value: 1.0),
+                FilterParam(name: "inputIntensity", type: .number, value: 0.0)]))
+        add(Filter(
+            filterName: "CIVignetteEffect",
+            categoryName: "CICategoryColorEffect",
+            inputParams: [
+                FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
+                FilterParam(name: "inputRadius", type: .number, value: 1.0),
+                FilterParam(name: "inputIntensity", type: .number, value: 0.0)]))
    }
     
     func add(_ filter: Filter) {
