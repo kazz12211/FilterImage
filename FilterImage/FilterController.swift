@@ -75,6 +75,17 @@ class FilterController: UIViewController {
         filterParamViewDict["CIVignetteEffect"] = CIVignetteEffectParamView(frame: CGRect.zero)
         filterParamViewDict["CISharpenLuminance"] = CISharpenLuminanceParamView(frame: CGRect.zero)
         filterParamViewDict["CIUnsharpMask"] = CIUnsharpMaskParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorMatrix"] = CIColorMatrixParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorPolynomial"] = CIColorPolynomialParamView(frame: CGRect.zero)
+        filterParamViewDict["CIComicEffect"] = CIComicEffectParamView(frame: CGRect.zero)
+        filterParamViewDict["CICrystallize"] = CICrystallizeParamView(frame: CGRect.zero)
+        filterParamViewDict["CIEdges"] = CIEdgesParamView(frame: CGRect.zero)
+        filterParamViewDict["CIEdgeWork"] = CIEdgeWorkParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHeightFieldFromMask"] = CIHeightFieldFromMaskParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHexagonalPixellate"] = CIHexagonalPixellateParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPixellate"] = CIPixellateParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHighlightShadowAdjust"] = CIHighlightShadowAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CILineOverlay"] = CILineOverlayParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -116,6 +127,17 @@ class FilterController: UIViewController {
         filterParamViewDict["CIVignetteEffect"] = CIVignetteEffectParamView(frame: CGRect.zero)
         filterParamViewDict["CISharpenLuminance"] = CISharpenLuminanceParamView(frame: CGRect.zero)
         filterParamViewDict["CIUnsharpMask"] = CIUnsharpMaskParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorMatrix"] = CIColorMatrixParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColorPolynomial"] = CIColorPolynomialParamView(frame: CGRect.zero)
+        filterParamViewDict["CIComicEffect"] = CIComicEffectParamView(frame: CGRect.zero)
+        filterParamViewDict["CICrystallize"] = CICrystallizeParamView(frame: CGRect.zero)
+        filterParamViewDict["CIEdges"] = CIEdgesParamView(frame: CGRect.zero)
+        filterParamViewDict["CIEdgeWork"] = CIEdgeWorkParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHeightFieldFromMask"] = CIHeightFieldFromMaskParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHexagonalPixellate"] = CIHexagonalPixellateParamView(frame: CGRect.zero)
+        filterParamViewDict["CIPixellate"] = CIPixellateParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHighlightShadowAdjust"] = CIHighlightShadowAdjustParamView(frame: CGRect.zero)
+        filterParamViewDict["CILineOverlay"] = CILineOverlayParamView(frame: CGRect.zero)
    }
     
     override func viewDidLoad() {

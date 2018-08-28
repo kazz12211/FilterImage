@@ -26,12 +26,6 @@ class CITemperatureAndTintParamView: FilterParamView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if inputNeutralTempField.isFirstResponder || inputNeutralTintField.isFirstResponder || inputTargetNeutralTempField.isFirstResponder || inputTargetNeutralTintField.isFirstResponder{
-            self.endEditing(true)
-        }
-    }
-    
     override func setupSubviews() {
         var rect = CGRect(x: 4, y: 4, width: 100, height: 29)
         let inputNeutralLabel = UILabel(frame: rect)

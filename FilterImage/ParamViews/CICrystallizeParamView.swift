@@ -1,23 +1,21 @@
 //
-//  CIZoomBlurParamView.swift
+//  CICrystallizeParamView.swift
 //  FilterImage
 //
-//  Created by Kazuo Tsubaki on 2018/08/24.
+//  Created by Kazuo Tsubaki on 2018/08/28.
 //  Copyright © 2018年 Kazuo Tsubaki. All rights reserved.
 //
 
 import UIKit
 
-class CIZoomBlurParamView: FilterParamView {
+class CICrystallizeParamView: FilterParamView {
 
-    var inputCenterLabel: UILabel!
     var inputCenterXField: UITextField!
     var inputCenterYField: UITextField!
-    var inputAmountLabel: UILabel!
-    var inputAmountSlider: UISlider!
-    var inputAmountValueLabel: UILabel!
+    var inputRadiusSlider: UISlider!
+    var inputRadiusValueLabel: UILabel!
     var inputCenter: CGPoint = CGPoint(x: 150, y: 150)
-    var amount: Float = 20
+    var radius: Float = 20
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,9 +27,9 @@ class CIZoomBlurParamView: FilterParamView {
     
     override func setupSubviews() {
         var rect = CGRect(x: 4, y: 4, width: 100, height: 29)
-        inputCenterLabel = UILabel(frame: rect)
-        inputCenterLabel?.textColor = .white
-        inputCenterLabel?.text = "Center"
+        let inputCenterLabel = UILabel(frame: rect)
+        inputCenterLabel.textColor = .white
+        inputCenterLabel.text = "Center"
         self.addSubview(inputCenterLabel)
         
         rect = CGRect(
@@ -64,50 +62,50 @@ class CIZoomBlurParamView: FilterParamView {
         }
         inputCenterXField.text = "".appendingFormat("%.0f", inputCenter.x)
         inputCenterYField.text = "".appendingFormat("%.0f", inputCenter.y)
-
+        
         
         
         rect = CGRect(x: 4, y: inputCenterLabel.frame.origin.y + inputCenterLabel.frame.height + 16, width: 100, height: 29)
-        inputAmountLabel = UILabel(frame: rect)
-        inputAmountLabel.textColor = .white
-        inputAmountLabel.text = "Amount"
-        self.addSubview(inputAmountLabel)
+        let inputRadiusLabel = UILabel(frame: rect)
+        inputRadiusLabel.textColor = .white
+        inputRadiusLabel.text = "Radius"
+        self.addSubview(inputRadiusLabel)
         
         rect = CGRect(
-            x: inputAmountLabel.frame.origin.x + inputAmountLabel.frame.width,
-            y: inputAmountLabel.frame.origin.y,
-            width: self.frame.width - (inputAmountLabel.frame.origin.x + inputAmountLabel.frame.width + 56),
+            x: inputRadiusLabel.frame.origin.x + inputRadiusLabel.frame.width,
+            y: inputRadiusLabel.frame.origin.y,
+            width: self.frame.width - (inputRadiusLabel.frame.origin.x + inputRadiusLabel.frame.width + 56),
             height: 29
         )
-        inputAmountSlider = UISlider(frame: rect)
-        inputAmountSlider.minimumValue = -200
-        inputAmountSlider.maximumValue = 200
-        if let param = filter.inputParam(name: "inputAmount") {
+        inputRadiusSlider = UISlider(frame: rect)
+        inputRadiusSlider.minimumValue = 1
+        inputRadiusSlider.maximumValue = 100
+        if let param = filter.inputParam(name: "inputRadius") {
             let value = param.value as! NSNumber
-            amount = Float(truncating: value)
+            radius = Float(truncating: value)
         }
-        inputAmountSlider.value = amount
-        addSubview(inputAmountSlider)
+        inputRadiusSlider.value = radius
+        addSubview(inputRadiusSlider)
         
         rect = CGRect(
-            x: inputAmountSlider.frame.origin.x + inputAmountSlider.frame.width,
-            y: inputAmountLabel.frame.origin.y,
+            x: inputRadiusSlider.frame.origin.x + inputRadiusSlider.frame.width,
+            y: inputRadiusLabel.frame.origin.y,
             width: 56,
             height: 29
         )
-        inputAmountValueLabel = UILabel(frame: rect)
-        inputAmountValueLabel.textColor = .white
-        inputAmountValueLabel.textAlignment = .center
-        inputAmountValueLabel.text = "".appendingFormat("%.0f", amount)
-        addSubview(inputAmountValueLabel)
+        inputRadiusValueLabel = UILabel(frame: rect)
+        inputRadiusValueLabel.textColor = .white
+        inputRadiusValueLabel.textAlignment = .center
+        inputRadiusValueLabel.text = "".appendingFormat("%.0f", radius)
+        addSubview(inputRadiusValueLabel)
         
-        inputAmountSlider.addTarget(self, action: #selector(amountChanged(_:)), for: .valueChanged)
+        inputRadiusSlider.addTarget(self, action: #selector(radiusChanged(_:)), for: .valueChanged)
         
     }
     
-    @objc func amountChanged(_ sender: Any) {
-        amount = inputAmountSlider.value
-        inputAmountValueLabel.text = "".appendingFormat("%.0f", amount)
+    @objc func radiusChanged(_ sender: Any) {
+        radius = inputRadiusSlider.value
+        inputRadiusValueLabel.text = "".appendingFormat("%.0f", radius)
     }
     
     override func applyChanges() {
@@ -127,8 +125,8 @@ class CIZoomBlurParamView: FilterParamView {
         }
         let centerParam = FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter))
         filter.addInputParam(centerParam)
-        let amountParam = FilterParam(name: "inputAmount", type: .number, value: amount)
-        filter.addInputParam(amountParam)
+        let radiusParam = FilterParam(name: "inputRadius", type: .number, value: radius)
+        filter.addInputParam(radiusParam)
     }
-    
+
 }

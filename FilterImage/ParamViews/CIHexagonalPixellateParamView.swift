@@ -1,23 +1,21 @@
 //
-//  CIZoomBlurParamView.swift
+//  CIHexagonalPixellateParamView.swift
 //  FilterImage
 //
-//  Created by Kazuo Tsubaki on 2018/08/24.
+//  Created by Kazuo Tsubaki on 2018/08/28.
 //  Copyright © 2018年 Kazuo Tsubaki. All rights reserved.
 //
 
 import UIKit
 
-class CIZoomBlurParamView: FilterParamView {
+class CIHexagonalPixellateParamView: FilterParamView {
 
-    var inputCenterLabel: UILabel!
     var inputCenterXField: UITextField!
     var inputCenterYField: UITextField!
-    var inputAmountLabel: UILabel!
-    var inputAmountSlider: UISlider!
-    var inputAmountValueLabel: UILabel!
+    var inputScaleSlider: UISlider!
+    var inputScaleValueLabel: UILabel!
     var inputCenter: CGPoint = CGPoint(x: 150, y: 150)
-    var amount: Float = 20
+    var scale: Float = 8
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,9 +27,9 @@ class CIZoomBlurParamView: FilterParamView {
     
     override func setupSubviews() {
         var rect = CGRect(x: 4, y: 4, width: 100, height: 29)
-        inputCenterLabel = UILabel(frame: rect)
-        inputCenterLabel?.textColor = .white
-        inputCenterLabel?.text = "Center"
+        let inputCenterLabel = UILabel(frame: rect)
+        inputCenterLabel.textColor = .white
+        inputCenterLabel.text = "Center"
         self.addSubview(inputCenterLabel)
         
         rect = CGRect(
@@ -64,50 +62,50 @@ class CIZoomBlurParamView: FilterParamView {
         }
         inputCenterXField.text = "".appendingFormat("%.0f", inputCenter.x)
         inputCenterYField.text = "".appendingFormat("%.0f", inputCenter.y)
-
+        
         
         
         rect = CGRect(x: 4, y: inputCenterLabel.frame.origin.y + inputCenterLabel.frame.height + 16, width: 100, height: 29)
-        inputAmountLabel = UILabel(frame: rect)
-        inputAmountLabel.textColor = .white
-        inputAmountLabel.text = "Amount"
-        self.addSubview(inputAmountLabel)
+        let inputScaleLabel = UILabel(frame: rect)
+        inputScaleLabel.textColor = .white
+        inputScaleLabel.text = "Scale"
+        self.addSubview(inputScaleLabel)
         
         rect = CGRect(
-            x: inputAmountLabel.frame.origin.x + inputAmountLabel.frame.width,
-            y: inputAmountLabel.frame.origin.y,
-            width: self.frame.width - (inputAmountLabel.frame.origin.x + inputAmountLabel.frame.width + 56),
+            x: inputScaleLabel.frame.origin.x + inputScaleLabel.frame.width,
+            y: inputScaleLabel.frame.origin.y,
+            width: self.frame.width - (inputScaleLabel.frame.origin.x + inputScaleLabel.frame.width + 56),
             height: 29
         )
-        inputAmountSlider = UISlider(frame: rect)
-        inputAmountSlider.minimumValue = -200
-        inputAmountSlider.maximumValue = 200
-        if let param = filter.inputParam(name: "inputAmount") {
+        inputScaleSlider = UISlider(frame: rect)
+        inputScaleSlider.minimumValue = 1
+        inputScaleSlider.maximumValue = 100
+        if let param = filter.inputParam(name: "inputScale") {
             let value = param.value as! NSNumber
-            amount = Float(truncating: value)
+            scale = Float(truncating: value)
         }
-        inputAmountSlider.value = amount
-        addSubview(inputAmountSlider)
+        inputScaleSlider.value = scale
+        addSubview(inputScaleSlider)
         
         rect = CGRect(
-            x: inputAmountSlider.frame.origin.x + inputAmountSlider.frame.width,
-            y: inputAmountLabel.frame.origin.y,
+            x: inputScaleSlider.frame.origin.x + inputScaleSlider.frame.width,
+            y: inputScaleLabel.frame.origin.y,
             width: 56,
             height: 29
         )
-        inputAmountValueLabel = UILabel(frame: rect)
-        inputAmountValueLabel.textColor = .white
-        inputAmountValueLabel.textAlignment = .center
-        inputAmountValueLabel.text = "".appendingFormat("%.0f", amount)
-        addSubview(inputAmountValueLabel)
+        inputScaleValueLabel = UILabel(frame: rect)
+        inputScaleValueLabel.textColor = .white
+        inputScaleValueLabel.textAlignment = .center
+        inputScaleValueLabel.text = "".appendingFormat("%.1f", scale)
+        addSubview(inputScaleValueLabel)
         
-        inputAmountSlider.addTarget(self, action: #selector(amountChanged(_:)), for: .valueChanged)
+        inputScaleSlider.addTarget(self, action: #selector(scaleChanged(_:)), for: .valueChanged)
         
     }
     
-    @objc func amountChanged(_ sender: Any) {
-        amount = inputAmountSlider.value
-        inputAmountValueLabel.text = "".appendingFormat("%.0f", amount)
+    @objc func scaleChanged(_ sender: Any) {
+        scale = inputScaleSlider.value
+        inputScaleValueLabel.text = "".appendingFormat("%.1f", scale)
     }
     
     override func applyChanges() {
@@ -127,8 +125,8 @@ class CIZoomBlurParamView: FilterParamView {
         }
         let centerParam = FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter))
         filter.addInputParam(centerParam)
-        let amountParam = FilterParam(name: "inputAmount", type: .number, value: amount)
-        filter.addInputParam(amountParam)
+        let scaleParam = FilterParam(name: "inputScale", type: .number, value: scale)
+        filter.addInputParam(scaleParam)
     }
-    
+
 }

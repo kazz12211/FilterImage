@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jLO-Ha-K7E">
-                                <rect key="frame" x="16" y="44" width="343" height="251"/>
+                                <rect key="frame" x="16" y="44" width="343" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,12 +110,6 @@
                                     <outlet property="delegate" destination="tTb-2W-iSw" id="gKd-id-2aX"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocw-QA-38u">
-                                <rect key="frame" x="16" y="323" width="343" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="E8R-Gf-3Jc"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXd-0z-2ot">
                                 <rect key="frame" x="16" y="625" width="98" height="30"/>
                                 <constraints>
@@ -140,13 +134,19 @@
                                     <action selector="okClicked:" destination="tTb-2W-iSw" eventType="touchUpInside" id="6fS-is-PHA"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ocw-QA-38u">
+                                <rect key="frame" x="8" y="323" width="359" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="316" id="E8R-Gf-3Jc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Mee-Oz-wBD" firstAttribute="bottom" secondItem="6Su-Gd-SSD" secondAttribute="bottom" constant="12" id="KYd-V0-wCk"/>
                             <constraint firstItem="rXd-0z-2ot" firstAttribute="leading" secondItem="Mee-Oz-wBD" secondAttribute="leading" constant="16" id="Lcq-mX-D5V"/>
                             <constraint firstItem="jLO-Ha-K7E" firstAttribute="leading" secondItem="Mee-Oz-wBD" secondAttribute="leading" constant="16" id="PCt-2Y-dug"/>
-                            <constraint firstItem="ocw-QA-38u" firstAttribute="top" secondItem="jLO-Ha-K7E" secondAttribute="bottom" constant="28" id="TEk-Y6-DlZ"/>
+                            <constraint firstItem="ocw-QA-38u" firstAttribute="top" secondItem="jLO-Ha-K7E" secondAttribute="bottom" id="TEk-Y6-DlZ"/>
                             <constraint firstAttribute="bottom" secondItem="ocw-QA-38u" secondAttribute="bottom" constant="44" id="Z6d-94-J4t"/>
                             <constraint firstItem="Mee-Oz-wBD" firstAttribute="bottom" secondItem="rXd-0z-2ot" secondAttribute="bottom" constant="12" id="bxV-jz-ch9"/>
                             <constraint firstItem="ocw-QA-38u" firstAttribute="leading" secondItem="Mee-Oz-wBD" secondAttribute="leading" constant="16" id="cQc-dV-1vq"/>

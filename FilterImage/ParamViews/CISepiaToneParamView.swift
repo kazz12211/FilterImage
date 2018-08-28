@@ -26,13 +26,13 @@ class CISepiaToneParamView: FilterParamView {
     override func setupSubviews() {
         self.backgroundColor = .clear
         
-        var rect = CGRect(x:4, y: 0, width: 100, height: 20);
+        var rect = CGRect(x:4, y: 4, width: 100, height: 20);
         let inputIntensityLabel = UILabel(frame: rect)
         inputIntensityLabel.textColor = .white
         inputIntensityLabel.text = "Intensity"
         self.addSubview(inputIntensityLabel)
         
-        rect = CGRect(x: inputIntensityLabel.frame.origin.x + inputIntensityLabel.frame.width, y: self.frame.height-45, width: self.frame.width - (inputIntensityLabel.frame.origin.x + inputIntensityLabel.frame.width + 44), height: 29)
+        rect = CGRect(x: inputIntensityLabel.frame.origin.x + inputIntensityLabel.frame.width, y: inputIntensityLabel.frame.origin.y, width: self.frame.width - (inputIntensityLabel.frame.origin.x + inputIntensityLabel.frame.width + 44), height: 29)
         inputIntensitySlider = UISlider(frame: rect)
         inputIntensitySlider.minimumValue = 0
         inputIntensitySlider.maximumValue = 1
@@ -43,7 +43,7 @@ class CISepiaToneParamView: FilterParamView {
         inputIntensitySlider.value = intensity
         self.addSubview(inputIntensitySlider)
         
-        rect = CGRect(x: inputIntensitySlider.frame.origin.x + inputIntensitySlider.frame.width, y: self.frame.height-45, width: 44, height: 29)
+        rect = CGRect(x: inputIntensitySlider.frame.origin.x + inputIntensitySlider.frame.width, y: inputIntensityLabel.frame.origin.y, width: 44, height: 29)
         inputIntensityValueLabel = UILabel(frame: rect)
         inputIntensityValueLabel.textColor = .white
         inputIntensityValueLabel.textAlignment = .center

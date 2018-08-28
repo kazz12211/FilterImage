@@ -29,16 +29,10 @@ class CIVignetteEffectParamView: FilterParamView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if inputCenterXField.isFirstResponder || inputCenterYField.isFirstResponder {
-            self.endEditing(true)
-        }
-    }
-
     override func setupSubviews() {
         self.backgroundColor = .clear
         
-        var rect = CGRect(x: 4, y: 0, width: 100, height: 29)
+        var rect = CGRect(x: 4, y: 4, width: 100, height: 29)
         let inputCenterLabel = UILabel(frame: rect)
         inputCenterLabel.textColor = .white
         inputCenterLabel.text = "Center"

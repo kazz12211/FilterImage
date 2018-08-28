@@ -29,7 +29,7 @@ class CIUnsharpMaskParamView: FilterParamView {
     override func setupSubviews() {
         self.backgroundColor = .clear
         
-        var rect = CGRect(x:4, y: 0, width: 100, height: 20);
+        var rect = CGRect(x:4, y: 4, width: 100, height: 20);
         let inputRadiusLabel = UILabel(frame: rect)
         inputRadiusLabel.textColor = .white
         inputRadiusLabel.text = "Radius"

@@ -30,19 +30,6 @@ class CIColorClampParamView: FilterParamView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if inputMinComponentsXField.isFirstResponder
-            || inputMinComponentsYField.isFirstResponder
-            || inputMinComponentsWField.isFirstResponder
-            || inputMinComponentsHField.isFirstResponder
-            || inputMaxComponentsXField.isFirstResponder
-            || inputMaxComponentsYField.isFirstResponder
-            || inputMaxComponentsWField.isFirstResponder
-            || inputMaxComponentsHField.isFirstResponder {
-            self.endEditing(true)
-        }
-    }
-
     override func setupSubviews() {
         var rect = CGRect(x: 4, y: 4, width: 50, height: 29)
         let inputMinComponentsLabel = UILabel(frame: rect)
