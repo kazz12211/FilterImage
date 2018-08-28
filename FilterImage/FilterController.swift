@@ -73,6 +73,8 @@ class FilterController: UIViewController {
         filterParamViewDict["CISepiaTone"] = CISepiaToneParamView(frame: CGRect.zero)
         filterParamViewDict["CIVignette"] = CIVignetteParamView(frame: CGRect.zero)
         filterParamViewDict["CIVignetteEffect"] = CIVignetteEffectParamView(frame: CGRect.zero)
+        filterParamViewDict["CISharpenLuminance"] = CISharpenLuminanceParamView(frame: CGRect.zero)
+        filterParamViewDict["CIUnsharpMask"] = CIUnsharpMaskParamView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -112,6 +114,8 @@ class FilterController: UIViewController {
         filterParamViewDict["CISepiaTone"] = CISepiaToneParamView(frame: CGRect.zero)
         filterParamViewDict["CIVignette"] = CIVignetteParamView(frame: CGRect.zero)
         filterParamViewDict["CIVignetteEffect"] = CIVignetteEffectParamView(frame: CGRect.zero)
+        filterParamViewDict["CISharpenLuminance"] = CISharpenLuminanceParamView(frame: CGRect.zero)
+        filterParamViewDict["CIUnsharpMask"] = CIUnsharpMaskParamView(frame: CGRect.zero)
    }
     
     override func viewDidLoad() {

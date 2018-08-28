@@ -183,6 +183,16 @@ class Filters: NSObject {
                 FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
                 FilterParam(name: "inputRadius", type: .number, value: 1.0),
                 FilterParam(name: "inputIntensity", type: .number, value: 0.0)]))
+        add(Filter(
+            filterName: "CISharpenLuminance",
+            categoryName: "CICategorySharpen",
+            inputParams: [FilterParam(name: "inputSharpness", type: .number, value: 0.4)])) // 0 - 2
+        add(Filter(
+            filterName: "CIUnsharpMask",
+            categoryName: "CICategorySharpen",
+            inputParams: [
+                FilterParam(name: "inputRadius", type: .number, value: 2.5),    // 0 - 100
+                FilterParam(name: "inputIntensity", type: .number, value: 0.5)])) // 0 - 1
    }
     
     func add(_ filter: Filter) {
