@@ -90,6 +90,14 @@ class FilterController: UIViewController {
         filterParamViewDict["CIDotScreen"] = CIDotScreenParamView(frame: CGRect.zero)
         filterParamViewDict["CIHatchedScreen"] = CIHatchedScreenParamView(frame: CGRect.zero)
         filterParamViewDict["CILineScreen"] = CILineScreenParamView(frame: CGRect.zero)
+        filterParamViewDict["CIAreaAverage"] = CIAreaAverageParamView(frame: CGRect.zero)
+        filterParamViewDict["CIRowAverage"] = CIRowAverageParamView(frame: CGRect.zero)
+        filterParamViewDict["CIColumnAverage"] = CIColumnAverageParamView(frame: CGRect.zero)
+        filterParamViewDict["CIAreaMaximum"] = CIAreaMaximumParamView(frame: CGRect.zero)
+        filterParamViewDict["CIAreaMinimum"] = CIAreaMinimumParamView(frame: CGRect.zero)
+        filterParamViewDict["CIAreaMaximumAlpha"] = CIAreaMaximumAlphaParamView(frame: CGRect.zero)
+        filterParamViewDict["CIAreaMinimumAlpha"] = CIAreaMinimumAlphaParamView(frame: CGRect.zero)
+        filterParamViewDict["CIHistogramDisplayFilter"] = CIHistogramDisplayFilterParamView(frame: CGRect.zero)
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

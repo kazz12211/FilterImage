@@ -320,6 +320,56 @@ class Filters: NSObject {
                 FilterParam(name: "inputAngle", type: .number, value: 0),
                 FilterParam(name: "inputSharpness", type: .number, value: 0.7)
             ]))
+        add(Filter(
+            filterName: "CIAreaAverage",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIRowAverage",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIColumnAverage",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIAreaMaximum",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIAreaMinimum",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIAreaMaximumAlpha",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIAreaMinimumAlpha",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputExtent", type: .vector, value: CIVector(cgRect: CGRect(x: 0, y: 0, width: 640, height: 80)))
+            ]))
+        add(Filter(
+            filterName: "CIHistogramDisplayFilter",
+            categoryName: "CICategoryReduction",
+            inputParams: [
+                FilterParam(name: "inputHeight", type: .number, value: 100),
+                FilterParam(name: "inputHighLimit", type: .number, value: 1),
+                FilterParam(name: "inputLowLimit", type: .number, value: 0)
+            ]))
     }
     
     func add(_ filter: Filter) {
