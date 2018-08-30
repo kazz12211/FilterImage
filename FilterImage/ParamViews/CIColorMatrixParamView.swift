@@ -277,151 +277,26 @@ class CIColorMatrixParamView: FilterParamView {
    }
     
     override func applyChanges() {
-        if let str = inputRV_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                RVector.origin.x = CGFloat(truncating: value)
-            } else {
-                RVector.origin.x = 1
-            }
-        }
-        if let str = inputRV_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                RVector.origin.y = CGFloat(truncating: value)
-            } else {
-                RVector.origin.y = 0
-            }
-        }
-        if let str = inputRV_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                RVector.size.width = CGFloat(truncating: value)
-            } else {
-                RVector.size.width = 0
-            }
-        }
-        if let str = inputRV_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                RVector.size.height = CGFloat(truncating: value)
-            } else {
-                RVector.size.height = 0
-            }
-        }
-        
-        if let str = inputGV_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                GVector.origin.x = CGFloat(truncating: value)
-            } else {
-                GVector.origin.x = 0
-            }
-        }
-        if let str = inputGV_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                GVector.origin.y = CGFloat(truncating: value)
-            } else {
-                GVector.origin.y = 1
-            }
-        }
-        if let str = inputGV_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                GVector.size.width = CGFloat(truncating: value)
-            } else {
-                GVector.size.width = 0
-            }
-        }
-        if let str = inputGV_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                GVector.size.height = CGFloat(truncating: value)
-            } else {
-                GVector.size.height = 0
-            }
-        }
-
-        if let str = inputBV_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BVector.origin.x = CGFloat(truncating: value)
-            } else {
-                BVector.origin.x = 0
-            }
-        }
-        if let str = inputBV_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BVector.origin.y = CGFloat(truncating: value)
-            } else {
-                BVector.origin.y = 0
-            }
-        }
-        if let str = inputBV_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BVector.size.width = CGFloat(truncating: value)
-            } else {
-                BVector.size.width = 1
-            }
-        }
-        if let str = inputBV_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BVector.size.height = CGFloat(truncating: value)
-            } else {
-                BVector.size.height = 0
-            }
-        }
-
-        if let str = inputAV_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                AVector.origin.x = CGFloat(truncating: value)
-            } else {
-                AVector.origin.x = 0
-            }
-        }
-        if let str = inputAV_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                AVector.origin.y = CGFloat(truncating: value)
-            } else {
-                AVector.origin.y = 0
-            }
-        }
-        if let str = inputAV_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                AVector.size.width = CGFloat(truncating: value)
-            } else {
-                AVector.size.width = 0
-            }
-        }
-        if let str = inputAV_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                AVector.size.height = CGFloat(truncating: value)
-            } else {
-                AVector.size.height = 1
-            }
-        }
-        
-        if let str = inputBias_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BiasVector.origin.x = CGFloat(truncating: value)
-            } else {
-                BiasVector.origin.x = 0
-            }
-        }
-        if let str = inputBias_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BiasVector.origin.y = CGFloat(truncating: value)
-            } else {
-                BiasVector.origin.y = 0
-            }
-        }
-        if let str = inputBias_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BiasVector.size.width = CGFloat(truncating: value)
-            } else {
-                BiasVector.size.width = 0
-            }
-        }
-        if let str = inputBias_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                BiasVector.size.height = CGFloat(truncating: value)
-            } else {
-                BiasVector.size.height = 0
-            }
-        }
-        
+        RVector.origin.x = getFieldValue(textField: inputRV_x_field, defaultValue: 1)
+        RVector.origin.y = getFieldValue(textField: inputRV_y_field, defaultValue: 0)
+        RVector.size.width = getFieldValue(textField: inputRV_w_field, defaultValue: 0)
+        RVector.size.height = getFieldValue(textField: inputRV_y_field, defaultValue: 0)
+        GVector.origin.x = getFieldValue(textField: inputGV_x_field, defaultValue: 0)
+        GVector.origin.y = getFieldValue(textField: inputGV_y_field, defaultValue: 1)
+        GVector.size.width = getFieldValue(textField: inputGV_w_field, defaultValue: 0)
+        GVector.size.height = getFieldValue(textField: inputGV_h_field, defaultValue: 0)
+        BVector.origin.x = getFieldValue(textField: inputBV_x_field, defaultValue: 0)
+        BVector.origin.y = getFieldValue(textField: inputBV_y_field, defaultValue: 0)
+        BVector.size.width = getFieldValue(textField: inputBV_w_field, defaultValue: 1)
+        BVector.size.height = getFieldValue(textField: inputBV_h_field, defaultValue: 0)
+        AVector.origin.x = getFieldValue(textField: inputAV_x_field, defaultValue: 0)
+        AVector.origin.y = getFieldValue(textField: inputAV_y_field, defaultValue: 0)
+        AVector.size.width = getFieldValue(textField: inputAV_w_field, defaultValue: 0)
+        AVector.size.height = getFieldValue(textField: inputAV_h_field, defaultValue: 1)
+        BiasVector.origin.x = getFieldValue(textField: inputBias_x_field, defaultValue: 0)
+        BiasVector.origin.y = getFieldValue(textField: inputBias_y_field, defaultValue: 0)
+        BiasVector.size.width = getFieldValue(textField: inputBias_w_field, defaultValue: 0)
+        BiasVector.size.height = getFieldValue(textField: inputBias_h_field, defaultValue: 0)
         let rParam = FilterParam(name: "inputRVector", type: .vector, value: CIVector(cgRect: RVector))
         filter.addInputParam(rParam)
         let gParam = FilterParam(name: "inputGVector", type: .vector, value: CIVector(cgRect: GVector))

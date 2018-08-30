@@ -202,64 +202,14 @@ class CIColorClampParamView: FilterParamView {
     override func applyChanges() {
         minComponents = CGRect.zero
         maxComponents = CGRect(x: 1, y: 1, width: 1, height: 1)
-        if let value = inputMinComponentsXField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    minComponents.origin.x = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMinComponentsYField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    minComponents.origin.y = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMinComponentsWField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    minComponents.size.width = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMinComponentsHField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    minComponents.size.height = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMaxComponentsXField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    maxComponents.origin.x = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMaxComponentsYField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    maxComponents.origin.y = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMaxComponentsWField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    maxComponents.size.width = CGFloat(truncating: f)
-                }
-            }
-        }
-        if let value = inputMaxComponentsHField.text {
-            if let f = NumberFormatter().number(from: value) {
-                if validValue(value: f) {
-                    maxComponents.size.height = CGFloat(truncating: f)
-                }
-            }
-        }
-        
-        
+        minComponents.origin.x = getFieldValue(textField: inputMinComponentsXField, defaultValue: 0)
+        minComponents.origin.y = getFieldValue(textField: inputMinComponentsYField, defaultValue: 0)
+        minComponents.size.width = getFieldValue(textField: inputMinComponentsWField, defaultValue: 0)
+        minComponents.size.height = getFieldValue(textField: inputMinComponentsHField, defaultValue: 0)
+        maxComponents.origin.x = getFieldValue(textField: inputMaxComponentsXField, defaultValue: 1)
+        maxComponents.origin.y = getFieldValue(textField: inputMaxComponentsYField, defaultValue: 1)
+        maxComponents.size.width = getFieldValue(textField: inputMaxComponentsWField, defaultValue: 1)
+        maxComponents.size.height = getFieldValue(textField: inputMaxComponentsHField, defaultValue: 1)
         let minParam = FilterParam(name: "inputMinComponents", type: .vector, value: CIVector(cgRect: minComponents))
         filter.addInputParam(minParam)
         let maxParam = FilterParam(name: "inputMaxComponents", type: .vector, value: CIVector(cgRect: maxComponents))

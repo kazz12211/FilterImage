@@ -137,20 +137,8 @@ class CIVignetteEffectParamView: FilterParamView {
     }
     
     override func applyChanges() {
-        if let text = inputCenterXField.text {
-            if let value = NumberFormatter().number(from: text) {
-                inputCenter.x = CGFloat(truncating: value)
-            } else {
-                inputCenter.x = 150
-            }
-        }
-        if let text = inputCenterYField.text {
-            if let value = NumberFormatter().number(from: text) {
-                inputCenter.y = CGFloat(truncating: value)
-            } else {
-                inputCenter.y = 150
-            }
-        }
+        inputCenter.x = getFieldValue(textField: inputCenterXField, defaultValue: 150)
+        inputCenter.y = getFieldValue(textField: inputCenterYField, defaultValue: 150)
         let centerParam = FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter))
         filter.addInputParam(centerParam)
         let radiusParam = FilterParam(name: "inputRadius", type: .number, value: radius)

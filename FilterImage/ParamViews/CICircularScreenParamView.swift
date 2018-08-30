@@ -1,21 +1,21 @@
 //
-//  CICrystallizeParamView.swift
+//  CICircularScreenParamView.swift
 //  FilterImage
 //
-//  Created by Kazuo Tsubaki on 2018/08/28.
+//  Created by Kazuo Tsubaki on 2018/08/30.
 //  Copyright © 2018年 Kazuo Tsubaki. All rights reserved.
 //
 
 import UIKit
 
-class CICrystallizeParamView: FilterParamView {
+class CICircularScreenParamView: FilterParamView {
 
     var inputCenterXField: UITextField!
     var inputCenterYField: UITextField!
-    var inputRadiusSlider: UISlider!
-    var inputRadiusValueLabel: UILabel!
+    var inputWidthSlider: UISlider!
+    var inputWidthValueLabel: UILabel!
     var inputCenter: CGPoint = CGPoint(x: 150, y: 150)
-    var radius: Float = 20
+    var width: Float = 6
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,46 +66,46 @@ class CICrystallizeParamView: FilterParamView {
         
         
         rect = CGRect(x: 4, y: inputCenterLabel.frame.origin.y + inputCenterLabel.frame.height + 16, width: 100, height: 29)
-        let inputRadiusLabel = UILabel(frame: rect)
-        inputRadiusLabel.textColor = .white
-        inputRadiusLabel.text = "Radius"
-        self.addSubview(inputRadiusLabel)
+        let inputWidthLabel = UILabel(frame: rect)
+        inputWidthLabel.textColor = .white
+        inputWidthLabel.text = "WIdth"
+        self.addSubview(inputWidthLabel)
         
         rect = CGRect(
-            x: inputRadiusLabel.frame.origin.x + inputRadiusLabel.frame.width,
-            y: inputRadiusLabel.frame.origin.y,
-            width: self.frame.width - (inputRadiusLabel.frame.origin.x + inputRadiusLabel.frame.width + 56),
+            x: inputWidthLabel.frame.origin.x + inputWidthLabel.frame.width,
+            y: inputWidthLabel.frame.origin.y,
+            width: self.frame.width - (inputWidthLabel.frame.origin.x + inputWidthLabel.frame.width + 56),
             height: 29
         )
-        inputRadiusSlider = UISlider(frame: rect)
-        inputRadiusSlider.minimumValue = 1
-        inputRadiusSlider.maximumValue = 100
-        if let param = filter.inputParam(name: "inputRadius") {
+        inputWidthSlider = UISlider(frame: rect)
+        inputWidthSlider.minimumValue = -200
+        inputWidthSlider.maximumValue = 200
+        if let param = filter.inputParam(name: "inputWidth") {
             let value = param.value as! NSNumber
-            radius = Float(truncating: value)
+            width = Float(truncating: value)
         }
-        inputRadiusSlider.value = radius
-        addSubview(inputRadiusSlider)
+        inputWidthSlider.value = width
+        addSubview(inputWidthSlider)
         
         rect = CGRect(
-            x: inputRadiusSlider.frame.origin.x + inputRadiusSlider.frame.width,
-            y: inputRadiusLabel.frame.origin.y,
+            x: inputWidthSlider.frame.origin.x + inputWidthSlider.frame.width,
+            y: inputWidthLabel.frame.origin.y,
             width: 56,
             height: 29
         )
-        inputRadiusValueLabel = UILabel(frame: rect)
-        inputRadiusValueLabel.textColor = .white
-        inputRadiusValueLabel.textAlignment = .center
-        inputRadiusValueLabel.text = "".appendingFormat("%.0f", radius)
-        addSubview(inputRadiusValueLabel)
+        inputWidthValueLabel = UILabel(frame: rect)
+        inputWidthValueLabel.textColor = .white
+        inputWidthValueLabel.textAlignment = .center
+        inputWidthValueLabel.text = "".appendingFormat("%.1f", width)
+        addSubview(inputWidthValueLabel)
         
-        inputRadiusSlider.addTarget(self, action: #selector(radiusChanged(_:)), for: .valueChanged)
+        inputWidthSlider.addTarget(self, action: #selector(widthChanged(_:)), for: .valueChanged)
         
     }
     
-    @objc func radiusChanged(_ sender: Any) {
-        radius = inputRadiusSlider.value
-        inputRadiusValueLabel.text = "".appendingFormat("%.0f", radius)
+    @objc func widthChanged(_ sender: Any) {
+        width = inputWidthSlider.value
+        inputWidthValueLabel.text = "".appendingFormat("%.1f", width)
     }
     
     override func applyChanges() {
@@ -113,8 +113,8 @@ class CICrystallizeParamView: FilterParamView {
         inputCenter.y = getFieldValue(textField: inputCenterYField, defaultValue: 150)
         let centerParam = FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter))
         filter.addInputParam(centerParam)
-        let radiusParam = FilterParam(name: "inputRadius", type: .number, value: radius)
-        filter.addInputParam(radiusParam)
+        let widthParam = FilterParam(name: "widthAmount", type: .number, value: width)
+        filter.addInputParam(widthParam)
     }
 
 }

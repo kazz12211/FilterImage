@@ -111,20 +111,8 @@ class CIZoomBlurParamView: FilterParamView {
     }
     
     override func applyChanges() {
-        if let xs = inputCenterXField.text {
-            if let x = NumberFormatter().number(from: xs) {
-                inputCenter.x = CGFloat(truncating: x)
-            } else {
-                inputCenter.x = 150
-            }
-        }
-        if let ys = inputCenterYField.text {
-            if let y = NumberFormatter().number(from: ys) {
-                inputCenter.y = CGFloat(truncating: y)
-            } else {
-                inputCenter.y = 150
-            }
-        }
+        inputCenter.x = getFieldValue(textField: inputCenterXField, defaultValue: 150)
+        inputCenter.y = getFieldValue(textField: inputCenterYField, defaultValue: 150)
         let centerParam = FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter))
         filter.addInputParam(centerParam)
         let amountParam = FilterParam(name: "inputAmount", type: .number, value: amount)

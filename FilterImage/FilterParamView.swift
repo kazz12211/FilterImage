@@ -61,4 +61,16 @@ class FilterParamView: UIView {
         }
     }
     
+    func getFieldValue(textField: UITextField, defaultValue: CGFloat) -> CGFloat {
+        if let str = textField.text {
+            if let value = NumberFormatter().number(from: str) {
+                return CGFloat(truncating: value)
+            } else {
+                return defaultValue
+            }
+        } else {
+            return defaultValue
+        }
+
+    }
 }

@@ -234,122 +234,22 @@ class CIColorPolynomialParamView: FilterParamView {
     }
     
     override func applyChanges() {
-        if let str = inputRC_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                redCoefficients.origin.x = CGFloat(truncating: value)
-            } else {
-                redCoefficients.origin.x = 0
-            }
-        }
-        if let str = inputRC_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                redCoefficients.origin.y = CGFloat(truncating: value)
-            } else {
-                redCoefficients.origin.y = 1
-            }
-        }
-        if let str = inputRC_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                redCoefficients.size.width = CGFloat(truncating: value)
-            } else {
-                redCoefficients.size.width = 0
-            }
-        }
-        if let str = inputRC_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                redCoefficients.size.height = CGFloat(truncating: value)
-            } else {
-                redCoefficients.size.height = 0
-            }
-        }
-        
-        if let str = inputGC_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                greenCoefficients.origin.x = CGFloat(truncating: value)
-            } else {
-                greenCoefficients.origin.x = 0
-            }
-        }
-        if let str = inputGC_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                greenCoefficients.origin.y = CGFloat(truncating: value)
-            } else {
-                greenCoefficients.origin.y = 1
-            }
-        }
-        if let str = inputGC_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                greenCoefficients.size.width = CGFloat(truncating: value)
-            } else {
-                greenCoefficients.size.width = 0
-            }
-        }
-        if let str = inputGC_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                greenCoefficients.size.height = CGFloat(truncating: value)
-            } else {
-                greenCoefficients.size.height = 0
-            }
-        }
-        
-        if let str = inputBC_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                blueCoefficients.origin.x = CGFloat(truncating: value)
-            } else {
-                blueCoefficients.origin.x = 0
-            }
-        }
-        if let str = inputBC_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                blueCoefficients.origin.y = CGFloat(truncating: value)
-            } else {
-                blueCoefficients.origin.y = 1
-            }
-        }
-        if let str = inputBC_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                blueCoefficients.size.width = CGFloat(truncating: value)
-            } else {
-                blueCoefficients.size.width = 0
-            }
-        }
-        if let str = inputBC_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                blueCoefficients.size.height = CGFloat(truncating: value)
-            } else {
-                blueCoefficients.size.height = 0
-            }
-        }
-        
-        if let str = inputAC_x_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                alphaCoefficients.origin.x = CGFloat(truncating: value)
-            } else {
-                alphaCoefficients.origin.x = 0
-            }
-        }
-        if let str = inputAC_y_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                alphaCoefficients.origin.y = CGFloat(truncating: value)
-            } else {
-                alphaCoefficients.origin.y = 1
-            }
-        }
-        if let str = inputAC_w_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                alphaCoefficients.size.width = CGFloat(truncating: value)
-            } else {
-                alphaCoefficients.size.width = 0
-            }
-        }
-        if let str = inputAC_h_field.text {
-            if let value = NumberFormatter().number(from: str) {
-                alphaCoefficients.size.height = CGFloat(truncating: value)
-            } else {
-                alphaCoefficients.size.height = 0
-            }
-        }
-        
+        redCoefficients.origin.x = getFieldValue(textField: inputRC_x_field, defaultValue: 0)
+        redCoefficients.origin.y = getFieldValue(textField: inputRC_y_field, defaultValue: 1)
+        redCoefficients.size.width = getFieldValue(textField: inputRC_w_field, defaultValue: 0)
+        redCoefficients.size.height = getFieldValue(textField: inputRC_h_field, defaultValue: 0)
+        greenCoefficients.origin.x = getFieldValue(textField: inputGC_x_field, defaultValue: 0)
+        greenCoefficients.origin.y = getFieldValue(textField: inputGC_y_field, defaultValue: 1)
+        greenCoefficients.size.width = getFieldValue(textField: inputGC_w_field, defaultValue: 0)
+        greenCoefficients.size.height = getFieldValue(textField: inputGC_h_field, defaultValue: 0)
+        blueCoefficients.origin.x = getFieldValue(textField: inputBC_x_field, defaultValue: 0)
+        blueCoefficients.origin.y = getFieldValue(textField: inputBC_y_field, defaultValue: 1)
+        blueCoefficients.size.width = getFieldValue(textField: inputBC_w_field, defaultValue: 0)
+        blueCoefficients.size.height = getFieldValue(textField: inputBC_h_field, defaultValue: 0)
+        alphaCoefficients.origin.x = getFieldValue(textField: inputAC_x_field, defaultValue: 0)
+        alphaCoefficients.origin.y = getFieldValue(textField: inputAC_y_field, defaultValue: 1)
+        alphaCoefficients.size.width = getFieldValue(textField: inputAC_w_field, defaultValue: 0)
+        alphaCoefficients.size.height = getFieldValue(textField: inputAC_h_field, defaultValue: 0)
         
         let rParam = FilterParam(name: "inputRedCoefficients", type: .vector, value: CIVector(cgRect: redCoefficients))
         filter.addInputParam(rParam)

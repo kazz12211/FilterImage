@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F8391465212D776A0010C963 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8391464212D776A0010C963 /* CoreGraphics.framework */; };
 		F8391467212D7B410010C963 /* CIColorMonochromeParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8391466212D7B410010C963 /* CIColorMonochromeParamView.swift */; };
+		F839C8F821376F1B0033AE63 /* CICircularScreenParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839C8F721376F1B0033AE63 /* CICircularScreenParamView.swift */; };
 		F83C0DD721338A86002BC6DD /* CIColorMatrixParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DD621338A86002BC6DD /* CIColorMatrixParamView.swift */; };
 		F83C0DD921338ABE002BC6DD /* CIColorPolynomialParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DD821338ABE002BC6DD /* CIColorPolynomialParamView.swift */; };
 		F83C0DDB21338AFD002BC6DD /* CIToneCurveParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DDA21338AFD002BC6DD /* CIToneCurveParamView.swift */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		F8391464212D776A0010C963 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F8391466212D7B410010C963 /* CIColorMonochromeParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorMonochromeParamView.swift; sourceTree = "<group>"; };
+		F839C8F721376F1B0033AE63 /* CICircularScreenParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICircularScreenParamView.swift; sourceTree = "<group>"; };
 		F83C0DD621338A86002BC6DD /* CIColorMatrixParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorMatrixParamView.swift; sourceTree = "<group>"; };
 		F83C0DD821338ABE002BC6DD /* CIColorPolynomialParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorPolynomialParamView.swift; sourceTree = "<group>"; };
 		F83C0DDA21338AFD002BC6DD /* CIToneCurveParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIToneCurveParamView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				F8683A3B2134EC2B008ED64B /* CIPixellateParamView.swift */,
 				F8683A3D2134ECF8008ED64B /* CIHighlightShadowAdjustParamView.swift */,
 				F8683A3F2134F0DE008ED64B /* CILineOverlayParamView.swift */,
+				F839C8F721376F1B0033AE63 /* CICircularScreenParamView.swift */,
 			);
 			path = ParamViews;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				F848AF8D212BC16F007F158C /* Filters.swift in Sources */,
 				F83C0DD921338ABE002BC6DD /* CIColorPolynomialParamView.swift in Sources */,
 				F8391467212D7B410010C963 /* CIColorMonochromeParamView.swift in Sources */,
+				F839C8F821376F1B0033AE63 /* CICircularScreenParamView.swift in Sources */,
 				F844D72B212FACA1009BB280 /* CIZoomBlurParamView.swift in Sources */,
 				F83C0DDD21338B5B002BC6DD /* CIVibranceParamView.swift in Sources */,
 				F8683A362134E7D1008ED64B /* CIEdgeWorkParamView.swift in Sources */,
