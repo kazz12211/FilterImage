@@ -274,7 +274,53 @@ class Filters: NSObject {
                 FilterParam(name: "inputThreshold", type: .number, value: 0.0),
                 FilterParam(name: "inputContrast", type: .number, value: 50)
             ]))
-   }
+        add(Filter(
+            filterName: "CICircularScreen",
+            categoryName: "CICategoryHalftoneEffect",
+            inputParams: [
+                FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
+                FilterParam(name: "inputWidth", type: .number, value: 6),
+                FilterParam(name: "inputSharpness", type: .number, value: 0.7)
+            ]))
+        add(Filter(
+            filterName: "CICMYKHalftone",
+            categoryName: "CICategoryHalftoneEffect",
+            inputParams: [
+                FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
+                FilterParam(name: "inputWidth", type: .number, value: 6),
+                FilterParam(name: "inputAngle", type: .number, value: 0),
+                FilterParam(name: "inputSharpness", type: .number, value: 0.7),
+                FilterParam(name: "inputGCR", type: .number, value: 1),
+                FilterParam(name: "inputUCR", type: .number, value: 0.5)
+            ]))
+        add(Filter(
+            filterName: "CIDotScreen",
+            categoryName: "CICategoryHalftoneEffect",
+            inputParams: [
+                FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
+                FilterParam(name: "inputWidth", type: .number, value: 6),
+                FilterParam(name: "inputAngle", type: .number, value: 0),
+                FilterParam(name: "inputSharpness", type: .number, value: 0.7)
+            ]))
+        add(Filter(
+            filterName: "CIHatchedScreen",
+            categoryName: "CICategoryHalftoneEffect",
+            inputParams: [
+                FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
+                FilterParam(name: "inputWidth", type: .number, value: 6),
+                FilterParam(name: "inputAngle", type: .number, value: 0),
+                FilterParam(name: "inputSharpness", type: .number, value: 0.7)
+            ]))
+        add(Filter(
+            filterName: "CILineScreen",
+            categoryName: "CICategoryHalftoneEffect",
+            inputParams: [
+                FilterParam(name: "inputCenter", type: .vector, value: CIVector(cgPoint: CGPoint(x: 150, y: 150))),
+                FilterParam(name: "inputWidth", type: .number, value: 6),
+                FilterParam(name: "inputAngle", type: .number, value: 0),
+                FilterParam(name: "inputSharpness", type: .number, value: 0.7)
+            ]))
+    }
     
     func add(_ filter: Filter) {
         filters.append(filter)

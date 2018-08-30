@@ -1,5 +1,5 @@
 //
-//  CICircularScreenParamView.swift
+//  CIDotScreenParamView.swift
 //  FilterImage
 //
 //  Created by Kazuo Tsubaki on 2018/08/30.
@@ -8,16 +8,19 @@
 
 import UIKit
 
-class CICircularScreenParamView: FilterParamView {
+class CIDotScreenParamView: FilterParamView {
 
     var inputCenterXField: UITextField!
     var inputCenterYField: UITextField!
     var inputWidthSlider: UISlider!
     var inputWidthValueLabel: UILabel!
+    var inputAngleSlider: UISlider!
+    var inputAngleValueLabel: UILabel!
     var inputSharpnessSlider: UISlider!
     var inputSharpnessValueLabel: UILabel!
     var inputCenter: CGPoint = CGPoint(x: 150, y: 150)
     var width: Float = 6
+    var angle: Float = 0
     var sharpness: Float = 0.7
     
     override init(frame: CGRect) {
@@ -105,6 +108,42 @@ class CICircularScreenParamView: FilterParamView {
         inputWidthSlider.addTarget(self, action: #selector(widthChanged(_:)), for: .valueChanged)
         
         rect = CGRect(x: 4, y: inputWidthLabel.frame.origin.y + inputWidthLabel.frame.height + 16, width: 100, height: 29)
+        let inputAngleLabel = UILabel(frame: rect)
+        inputAngleLabel.textColor = .white
+        inputAngleLabel.text = "Angle"
+        self.addSubview(inputAngleLabel)
+        
+        rect = CGRect(
+            x: inputAngleLabel.frame.origin.x + inputAngleLabel.frame.width,
+            y: inputAngleLabel.frame.origin.y,
+            width: self.frame.width - (inputAngleLabel.frame.origin.x + inputAngleLabel.frame.width + 56),
+            height: 29
+        )
+        inputAngleSlider = UISlider(frame: rect)
+        inputAngleSlider.minimumValue = -Float.pi
+        inputAngleSlider.maximumValue = Float.pi
+        if let param = filter.inputParam(name: "inputAngle") {
+            let value = param.value as! NSNumber
+            angle = Float(truncating: value)
+        }
+        inputAngleSlider.value = angle
+        addSubview(inputAngleSlider)
+        
+        rect = CGRect(
+            x: inputAngleSlider.frame.origin.x + inputAngleSlider.frame.width,
+            y: inputAngleLabel.frame.origin.y,
+            width: 56,
+            height: 29
+        )
+        inputAngleValueLabel = UILabel(frame: rect)
+        inputAngleValueLabel.textColor = .white
+        inputAngleValueLabel.textAlignment = .center
+        inputAngleValueLabel.text = "".appendingFormat("%.2f", angle)
+        addSubview(inputAngleValueLabel)
+        
+        inputAngleSlider.addTarget(self, action: #selector(angleChanged(_:)), for: .valueChanged)
+        
+        rect = CGRect(x: 4, y: inputAngleLabel.frame.origin.y + inputAngleLabel.frame.height + 16, width: 100, height: 29)
         let inputSharpnessLabel = UILabel(frame: rect)
         inputSharpnessLabel.textColor = .white
         inputSharpnessLabel.text = "Sharpness"
@@ -140,6 +179,7 @@ class CICircularScreenParamView: FilterParamView {
         
         inputSharpnessSlider.addTarget(self, action: #selector(sharpnessChanged(_:)), for: .valueChanged)
         
+        
     }
     
     @objc func widthChanged(_ sender: Any) {
@@ -150,16 +190,18 @@ class CICircularScreenParamView: FilterParamView {
         sharpness = inputSharpnessSlider.value
         inputSharpnessValueLabel.text = "".appendingFormat("%.2f", sharpness)
     }
-
+    @objc func angleChanged(_ sender: Any) {
+        angle = inputAngleSlider.value
+        inputAngleValueLabel.text = "".appendingFormat("%.2f", angle)
+    }
+    
     override func applyChanges() {
         inputCenter.x = getFieldValue(textField: inputCenterXField, defaultValue: 150)
         inputCenter.y = getFieldValue(textField: inputCenterYField, defaultValue: 150)
-        let centerParam = FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter))
-        filter.addInputParam(centerParam)
-        let widthParam = FilterParam(name: "inputWidth", type: .number, value: width)
-        filter.addInputParam(widthParam)
-        let sharpnessParam = FilterParam(name: "inputSharpness", type: .number, value: sharpness)
-        filter.addInputParam(sharpnessParam)
-   }
+        filter.addInputParam(FilterParam(name: "inputCenter", type: .number, value: CIVector(cgPoint: inputCenter)))
+        filter.addInputParam(FilterParam(name: "inputWidth", type: .number, value: width))
+        filter.addInputParam(FilterParam(name: "inputAngle", type: .number, value: angle))
+        filter.addInputParam(FilterParam(name: "inputSharpness", type: .number, value: sharpness))
+    }
 
 }

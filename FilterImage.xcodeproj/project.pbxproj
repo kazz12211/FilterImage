@@ -10,6 +10,10 @@
 		F8391465212D776A0010C963 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8391464212D776A0010C963 /* CoreGraphics.framework */; };
 		F8391467212D7B410010C963 /* CIColorMonochromeParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8391466212D7B410010C963 /* CIColorMonochromeParamView.swift */; };
 		F839C8F821376F1B0033AE63 /* CICircularScreenParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839C8F721376F1B0033AE63 /* CICircularScreenParamView.swift */; };
+		F839C8FA2137765B0033AE63 /* CICMYKHalftoneParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839C8F92137765B0033AE63 /* CICMYKHalftoneParamView.swift */; };
+		F839C8FC21377A530033AE63 /* CIDotScreenParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839C8FB21377A530033AE63 /* CIDotScreenParamView.swift */; };
+		F839C8FE21377B510033AE63 /* CIHatchedScreenParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839C8FD21377B510033AE63 /* CIHatchedScreenParamView.swift */; };
+		F839C90021377BF90033AE63 /* CILineScreenParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839C8FF21377BF90033AE63 /* CILineScreenParamView.swift */; };
 		F83C0DD721338A86002BC6DD /* CIColorMatrixParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DD621338A86002BC6DD /* CIColorMatrixParamView.swift */; };
 		F83C0DD921338ABE002BC6DD /* CIColorPolynomialParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DD821338ABE002BC6DD /* CIColorPolynomialParamView.swift */; };
 		F83C0DDB21338AFD002BC6DD /* CIToneCurveParamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C0DDA21338AFD002BC6DD /* CIToneCurveParamView.swift */; };
@@ -83,6 +87,10 @@
 		F8391464212D776A0010C963 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F8391466212D7B410010C963 /* CIColorMonochromeParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorMonochromeParamView.swift; sourceTree = "<group>"; };
 		F839C8F721376F1B0033AE63 /* CICircularScreenParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICircularScreenParamView.swift; sourceTree = "<group>"; };
+		F839C8F92137765B0033AE63 /* CICMYKHalftoneParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICMYKHalftoneParamView.swift; sourceTree = "<group>"; };
+		F839C8FB21377A530033AE63 /* CIDotScreenParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDotScreenParamView.swift; sourceTree = "<group>"; };
+		F839C8FD21377B510033AE63 /* CIHatchedScreenParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIHatchedScreenParamView.swift; sourceTree = "<group>"; };
+		F839C8FF21377BF90033AE63 /* CILineScreenParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILineScreenParamView.swift; sourceTree = "<group>"; };
 		F83C0DD621338A86002BC6DD /* CIColorMatrixParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorMatrixParamView.swift; sourceTree = "<group>"; };
 		F83C0DD821338ABE002BC6DD /* CIColorPolynomialParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorPolynomialParamView.swift; sourceTree = "<group>"; };
 		F83C0DDA21338AFD002BC6DD /* CIToneCurveParamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIToneCurveParamView.swift; sourceTree = "<group>"; };
@@ -226,6 +234,10 @@
 				F8683A3D2134ECF8008ED64B /* CIHighlightShadowAdjustParamView.swift */,
 				F8683A3F2134F0DE008ED64B /* CILineOverlayParamView.swift */,
 				F839C8F721376F1B0033AE63 /* CICircularScreenParamView.swift */,
+				F839C8F92137765B0033AE63 /* CICMYKHalftoneParamView.swift */,
+				F839C8FB21377A530033AE63 /* CIDotScreenParamView.swift */,
+				F839C8FD21377B510033AE63 /* CIHatchedScreenParamView.swift */,
+				F839C8FF21377BF90033AE63 /* CILineScreenParamView.swift */,
 			);
 			path = ParamViews;
 			sourceTree = "<group>";
@@ -363,6 +375,7 @@
 				F8431C0321317EFB002735EA /* CILinearToSRGBToneCurveParamView.swift in Sources */,
 				F8431C0121317CFF002735EA /* CIHueAdjustParamView.swift in Sources */,
 				F8C5E7E321311E31005D4DAA /* CIColorControlsParamView.swift in Sources */,
+				F839C8FC21377A530033AE63 /* CIDotScreenParamView.swift in Sources */,
 				F83C0E0721339FEE002BC6DD /* CIVignetteEffectParamView.swift in Sources */,
 				F8431C0521317F8F002735EA /* CISRGBToneCurveToLinearParamView.swift in Sources */,
 				F83C0DE321338FBB002BC6DD /* CIColorCubeParamView.swift in Sources */,
@@ -373,6 +386,7 @@
 				F83C0DE121338F3A002BC6DD /* CIColorCrossPolynomialParamView.swift in Sources */,
 				F83C0DED21339438002BC6DD /* CIMaskToAlphaParamView.swift in Sources */,
 				F83C0E0321339B62002BC6DD /* CISepiaToneParamView.swift in Sources */,
+				F839C90021377BF90033AE63 /* CILineScreenParamView.swift in Sources */,
 				F8683A402134F0DE008ED64B /* CILineOverlayParamView.swift in Sources */,
 				F8683A3C2134EC2B008ED64B /* CIPixellateParamView.swift in Sources */,
 				F8683A3E2134ECF8008ED64B /* CIHighlightShadowAdjustParamView.swift in Sources */,
@@ -413,9 +427,11 @@
 				F844D71F212F9B97009BB280 /* CINoiseReductionParamView.swift in Sources */,
 				F83C0DE721339062002BC6DD /* CIColorInvertParamView.swift in Sources */,
 				F8683A2C2134CBD5008ED64B /* CISharpenLuminanceParamView.swift in Sources */,
+				F839C8FA2137765B0033AE63 /* CICMYKHalftoneParamView.swift in Sources */,
 				F844D729212FA910009BB280 /* CIMotionBlurParamView.swift in Sources */,
 				F844D725212FA60B009BB280 /* CIGaussianBlurParamView.swift in Sources */,
 				F844D721212FA1C5009BB280 /* CIBoxBlurParamView.swift in Sources */,
+				F839C8FE21377B510033AE63 /* CIHatchedScreenParamView.swift in Sources */,
 				F866F4B4212AF15E00DFA4B4 /* AppDelegate.swift in Sources */,
 				F83C0DF72133988A002BC6DD /* CIPhotoEffectInstantParamView.swift in Sources */,
 				F8431BFF21317B3B002735EA /* CIGammaAdjustParamView.swift in Sources */,
